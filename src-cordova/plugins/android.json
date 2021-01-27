@@ -1,0 +1,44 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-sms-plugin": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    }
+  }
+}

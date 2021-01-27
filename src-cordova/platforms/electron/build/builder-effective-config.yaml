@@ -1,0 +1,15 @@
+directories:
+  output: 'D:\git-source\webpacktest\test\src-cordova\platforms\electron\build'
+  buildResources: 'D:\git-source\webpacktest\test\src-cordova\platforms\electron\build-res'
+  app: 'D:\git-source\webpacktest\test\src-cordova\platforms\electron\www'
+appId: com.vue.example.app
+productName: VueExampleAppName
+electronVersion: 4.0.1
+electronDownload:
+  version: 4.0.1
+win:
+  icon: installer.png
+  target:
+    - target: nsis
+      arch:
+        - x64
