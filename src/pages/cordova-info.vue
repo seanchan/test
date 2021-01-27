@@ -1,14 +1,51 @@
 <template>
   <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    
+      
+
+    <div
+      v-if="!cordova"
+      class="alert"
+    >
+      There might be an error with your installation. Check that <strong>Vue.cordova</strong> is available
+    </div>
+
+    <div
+      v-if="cordova && !cordova.deviceready"
+      class="alert"
+    >
+      The `deviceready` event has not been triggered.
+      <br />
+      Check the <a href="https://github.com/kartsims/vue-cordova#troubleshooting">Troubleshooting section</a> of vue-cordova's README.
+    </div>
+
+    <div class="indicators">
+      <div :class="{ ok: cordova.deviceready }">
+        <span></span>deviceready
+      </div>
+      <div
+        v-for="(pluginTest, plugin) in plugins"
+        :class="{ ok: pluginEnabled(plugin) }"
+        @click="pluginTest"
+        :key="plugin.id"
+      >
+        <span></span>{{ plugin }}
+      </div>
+      <p>
+        Click a plugin name to run a simple test
+      </p>
+    </div>
+
+    <h2>`Vue.cordova`</h2>
+
+    <div
+      class="dump"
+      v-if="cordova"
+    >{{ cordova }}</div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import Vue from "vue";
 export default {
   name: "home",
@@ -91,7 +128,7 @@ export default {
     };
   },
   components: {
-    HelloWorld,
+    
   },
   methods: {
     pluginEnabled: function(pluginName) {
