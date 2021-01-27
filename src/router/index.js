@@ -8,9 +8,9 @@ Vue.use(Router)
 const RouterLayout = createRouterLayout(layout => {
   return import('@/layouts/' + layout + '.vue')
 })
-console.log(routes)
+
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
