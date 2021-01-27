@@ -1,47 +1,46 @@
 <template>
-  <div class="home">
-      
+    <div class="home">
 
-    <div
-      v-if="!cordova"
-      class="alert"
-    >
-      There might be an error with your installation. Check that <strong>Vue.cordova</strong> is available
+        <div
+            v-if="!cordova"
+            class="alert"
+        >
+            There might be an error with your installation. Check that <strong>Vue.cordova</strong> is available
+        </div>
+
+        <div
+            v-if="cordova && !cordova.deviceready"
+            class="alert"
+        >
+            The `deviceready` event has not been triggered.
+            <br />
+            Check the <a href="https://github.com/kartsims/vue-cordova#troubleshooting">Troubleshooting section</a> of vue-cordova's README.
+        </div>
+
+        <div class="indicators">
+            <div :class="{ ok: cordova.deviceready }">
+                <span></span>deviceready
+            </div>
+            <div
+                v-for="(pluginTest, plugin) in plugins"
+                :class="{ ok: pluginEnabled(plugin) }"
+                @click="pluginTest"
+                :key="plugin.id"
+            >
+                <span></span>{{ plugin }}
+            </div>
+            <p>
+                Click a plugin name to run a simple test
+            </p>
+        </div>
+
+        <h2>`Vue.cordova`</h2>
+
+        <div
+            class="dump"
+            v-if="cordova"
+        >{{ cordova }}</div>
     </div>
-
-    <div
-      v-if="cordova && !cordova.deviceready"
-      class="alert"
-    >
-      The `deviceready` event has not been triggered.
-      <br />
-      Check the <a href="https://github.com/kartsims/vue-cordova#troubleshooting">Troubleshooting section</a> of vue-cordova's README.
-    </div>
-
-    <div class="indicators">
-      <div :class="{ ok: cordova.deviceready }">
-        <span></span>deviceready
-      </div>
-      <div
-        v-for="(pluginTest, plugin) in plugins"
-        :class="{ ok: pluginEnabled(plugin) }"
-        @click="pluginTest"
-        :key="plugin.id"
-      >
-        <span></span>{{ plugin }}
-      </div>
-      <p>
-        Click a plugin name to run a simple test
-      </p>
-    </div>
-
-    <h2>`Vue.cordova`</h2>
-
-    <div
-      class="dump"
-      v-if="cordova"
-    >{{ cordova }}</div>
-  </div>
 </template>
 
 <script>
@@ -54,8 +53,10 @@ export default {
       cordova: Vue.cordova,
       plugins: {
         "cordova-plugin-camera": function() {
+            console.log(Vue.cordova)
           if (!Vue.cordova.camera) {
             window.alert("Vue.cordova.camera not found !");
+            
             return;
           }
           Vue.cordova.camera.getPicture(
@@ -70,6 +71,15 @@ export default {
               destinationType: Vue.cordova.camera.DestinationType.FILE_URI,
             }
           );
+        },
+        "cordova-plugin-file": function() {
+          if (!Vue.cordova.file) {
+            window.alert("Vue.cordova.file not found !");
+            console.log(Vue.cordova);
+
+            return;
+          }
+          console.log(Vue.cordova.file);
         },
         "cordova-plugin-device": function() {
           if (!Vue.cordova.device) {
@@ -127,9 +137,7 @@ export default {
       },
     };
   },
-  components: {
-    
-  },
+  components: {},
   methods: {
     pluginEnabled: function(pluginName) {
       return this.cordova.plugins.indexOf(pluginName) !== -1;
