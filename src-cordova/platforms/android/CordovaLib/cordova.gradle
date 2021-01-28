@@ -59,7 +59,7 @@ String doFindLatestInstalledBuildTools(String minBuildToolsVersionString) {
         // Invalid inputs will be handled as 0.0.0
         .findAll { it.isHigherThan('0.0.0') }
         .max()
-
+        
     if (highestBuildToolsVersion == null) {
         throw new RuntimeException("""
             No installed build tools found. Install the Android build tools

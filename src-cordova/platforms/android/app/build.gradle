@@ -101,7 +101,7 @@ ext {
     if (!project.hasProperty('cdvCompileSdkVersion')) {
         cdvCompileSdkVersion = null;
     }
-    cdvCompileSdkVersion="26.0.1"
+    
     // The value for android.buildToolsVersion.
     if (!project.hasProperty('cdvBuildToolsVersion')) {
         cdvBuildToolsVersion = null;
@@ -154,7 +154,7 @@ def hasBuildExtras1 = file('build-extras.gradle').exists()
 if (hasBuildExtras1) {
     apply from: 'build-extras.gradle'
 }
-
+println('cdvCompileSdkVersion=' + cdvCompileSdkVersion)
 def hasBuildExtras2 = file('../build-extras.gradle').exists()
 if (hasBuildExtras2) {
     apply from: '../build-extras.gradle'
