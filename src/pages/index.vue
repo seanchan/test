@@ -2,6 +2,7 @@
   <div class="home">
     index
     <router-link to="/login">LinkTitle</router-link>
+    <vue-fb-customer-chat />
   </div>
 </template>
 

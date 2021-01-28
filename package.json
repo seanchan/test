@@ -30,6 +30,7 @@
     "vant": "^2.12.6",
     "vue": "^2.6.11",
     "vue-cordova": "^0.1.2",
+    "vue-fb-customer-chat": "^0.2.0",
     "vue-onsenui": "^2.6.2",
     "vue-otp-2": "^1.0.1",
     "vue-phone-number-input": "^1.1.10",
