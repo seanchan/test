@@ -31,8 +31,12 @@
     "vue": "^2.6.11",
     "vue-cordova": "^0.1.2",
     "vue-onsenui": "^2.6.2",
+    "vue-otp-2": "^1.0.1",
+    "vue-phone-number-input": "^1.1.10",
+    "vue-pincode-input": "^0.4.0",
     "vue-router": "^3.2.0",
-    "vue-router-layout": "^0.1.2"
+    "vue-router-layout": "^0.1.2",
+    "vue-tel-input": "^5.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
