@@ -11,7 +11,8 @@ import Vant from "vant";
 import "vant/lib/index.css";
 Vue.use(Vant);
 
-
+import VueOnsen from 'vue-onsenui'; // This imports 'onsenui', so no need to import it separately
+Vue.use(VueOnsen); // VueOnsen set here as plugin to VUE. Done automatically if a call to window.Vue exists in the startup code.
 
 
 

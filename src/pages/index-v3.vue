@@ -6,7 +6,7 @@ v3
 
 <script>
 export default {
-  layout: "f7",
+  layout: "onsen",
 };
 </script>
 
