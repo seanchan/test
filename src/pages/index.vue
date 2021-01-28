@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    v1
+    index
 
   </div>
 </template>
@@ -9,7 +9,7 @@
 // @ is an alias to /src
 
 export default {
-  layout: "vantui",
+  name: "index",
 
   components: {},
   methods: {},

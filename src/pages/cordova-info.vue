@@ -47,7 +47,8 @@
 // @ is an alias to /src
 import Vue from "vue";
 export default {
-  name: "home",
+  
+  name: "cordova-info",
   data: () => {
     return {
       cordova: Vue.cordova,

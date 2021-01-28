@@ -1,14 +1,15 @@
 <template>
     <div>
-v3
+
     </div>
 </template>
 
 <script>
-export default {
-  layout: "onsen",
-};
+    export default {
+        
+    }
 </script>
 
 <style lang="scss" scoped>
+
 </style>
